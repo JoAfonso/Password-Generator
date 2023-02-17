@@ -111,9 +111,9 @@ function App() {
               <label>Include Symbols</label>
             </div>
             <button type="submit" onClick={handleGeneratePassword}>
-              Generate Password
+              Generate
             </button>
-          </form>
+          </form>git
         </div>
       </div>
     </div>
