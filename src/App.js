@@ -60,7 +60,7 @@ function App() {
           <form>
             <div>
               <input
-                type="range"
+                type="number"
                 name="length"
                 max="20"
                 min="6"
