@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import {
   lowercaseLetters,
@@ -9,12 +9,11 @@ import {
 
 function App() {
   const [password, setPassword] = useState("");
-  const [passwordLength, setPasswordLength] = useState(8);
+  const [passwordLength, setPasswordLength] = useState(9);
   const [includeUppercaseLetters, setIncludeUppercaseLetters] = useState(true);
   const [includeLowercaseLetters, setIncludeLowercaseLetters] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
-  const [includeSpecialCharacters, setIncludeSpecialCharacters] =
-    useState(false);
+  const [includeSpecialCharacters, setIncludeSpecialCharacters] = useState(false);
 
   const handleGeneratePassword = (e) => {
     e.preventDefault();
@@ -57,63 +56,67 @@ function App() {
           <p>{password}</p>
         </div>
         <div className="content">
-          <form>
-            <div>
-              <input
-                type="number"
-                name="length"
-                max="20"
-                min="6"
-                id="length"
-                value={passwordLength}
-                onChange={(e) => setPasswordLength(e.target.value)}
-              />
-              <label>Character Length</label>
-            </div>
-            <div >
-              <input
-                type="checkbox"
-                name="uppercaseLetters"
-                id="uppercaseLetters"
-                checked={includeUppercaseLetters}
-                onChange={(e) => setIncludeUppercaseLetters(e.target.checked)}
-              />
-              <label>Include Uppercase</label>
-            </div>
-            <div >
-              <input
-                type="checkbox"
-                name="lowercaseLetters"
-                id="lowercaseLetters"
-                checked={includeLowercaseLetters}
-                onChange={(e) => setIncludeLowercaseLetters(e.target.checked)}
-              />
-              <label>Include Lowercase</label>
-            </div>
-            <div >
-              <input
-                type="checkbox"
-                name="numbers"
-                id="numbers"
-                checked={includeNumbers}
-                onChange={(e) => setIncludeNumbers(e.target.checked)}
-              />
-              <label>Include Numbers</label>
-            </div>
-            <div >
-              <input
-                type="checkbox"
-                name="specialCharacters"
-                id="specialCharacters"
-                checked={includeSpecialCharacters}
-                onChange={(e) => setIncludeSpecialCharacters(e.target.checked)}
-              />
-              <label>Include Symbols</label>
-            </div>
-            <button type="submit" onClick={handleGeneratePassword}>
-              Generate
-            </button>
-          </form>git
+          <div>
+            <form>
+              <div>
+                <input
+                  type="number"
+                  name="length"
+                  max="20"
+                  min="6"
+                  id="length"
+                  value={passwordLength}
+                  onChange={(e) => setPasswordLength(e.target.value)}
+                />
+                <label>Character Length</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="uppercaseLetters"
+                  id="uppercaseLetters"
+                  checked={includeUppercaseLetters}
+                  onChange={(e) => setIncludeUppercaseLetters(e.target.checked)}
+                />
+                <label>Include Uppercase</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="lowercaseLetters"
+                  id="lowercaseLetters"
+                  checked={includeLowercaseLetters}
+                  onChange={(e) => setIncludeLowercaseLetters(e.target.checked)}
+                />
+                <label>Include Lowercase</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="numbers"
+                  id="numbers"
+                  checked={includeNumbers}
+                  onChange={(e) => setIncludeNumbers(e.target.checked)}
+                />
+                <label>Include Numbers</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="specialCharacters"
+                  id="specialCharacters"
+                  checked={includeSpecialCharacters}
+                  onChange={(e) =>
+                    setIncludeSpecialCharacters(e.target.checked)
+                  }
+                />
+                <label>Include Symbols</label>
+              </div>
+              <button type="submit" onClick={handleGeneratePassword}>
+                Generate
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
